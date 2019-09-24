@@ -14,8 +14,6 @@ import br.cesed.unifacisa.si.arquitetura.school.repositories.FinanceiroRepositor
 public class FinanceiroService {
 
 	@Autowired
-	private AlunoService alunoService;
-	@Autowired
 	private FinanceiroRepository financeiroRepository;
 
 	public Financeiro getById(Integer id) {
@@ -31,6 +29,7 @@ public class FinanceiroService {
 	}
 
 	public boolean verificarStatus(Integer id) {
+		AlunoService alunoService = new AlunoService();
 		boolean status = false;
 		if (alunoService.getById(id).isStatus() == true) {
 			status = true;

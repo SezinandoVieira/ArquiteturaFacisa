@@ -17,8 +17,6 @@ public class AlunoService {
 
 	@Autowired
 	private AlunoRepository alunoRepository;
-	@Autowired
-	private FinanceiroService financeiroService;
 	
 	public Aluno getById (Integer id) {
 		return alunoRepository.findOne(id);
@@ -31,6 +29,7 @@ public class AlunoService {
 	
 	@Transactional
 	public Aluno postAluno (Aluno aluno) throws Exception {
+		FinanceiroService financeiroService = new FinanceiroService();
 		if(financeiroService.verificarStatus(aluno.getId()) == true) {
 			return alunoRepository.save(aluno);
 		} else {

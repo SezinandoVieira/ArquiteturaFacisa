@@ -57,4 +57,8 @@ public class FinanceiroController {
 		return new ResponseEntity<Financeiro>(HttpStatus.OK);
 	}
 	
+	public ResponseEntity<Financeiro> mostrarStatus (Integer id){
+		return new ResponseEntity<Financeiro>(HttpStatus.OK);
+	}
+	
 }

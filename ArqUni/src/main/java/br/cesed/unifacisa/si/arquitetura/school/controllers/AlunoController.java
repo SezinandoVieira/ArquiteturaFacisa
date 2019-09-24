@@ -23,9 +23,8 @@ public class AlunoController {
 	@RequestMapping(value = "/aluno", method = RequestMethod.GET)
 	public ResponseEntity<List<Aluno>> listarAlunos() {
 
-		List<Aluno> listarAlunos = alunoService.getAllAlunos();
 
-		return new ResponseEntity<List<Aluno>>(listarAlunos, HttpStatus.OK);
+		return new ResponseEntity<List<Aluno>>(alunoService.getAllAlunos(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "aluno/{id}", method = RequestMethod.GET)
